@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS 10B Module 1 Project Summary</title>
+<style>
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    line-height: 1.4;
+    font-size: 16px;
+    padding: 0 10px;
+    margin: 50px auto;
+    max-width: 650px;
+    color: #111;
+    background: #fff;
+  }
+
+  #maincontent {
+    max-width: 42em;
+    margin: 70px auto 15px;
+  }
+
+  main {
+    display: block;
+  }
+
+  h1, h2, h3 {
+    line-height: 1.25;
+  }
+
+  h1 {
+    font-size: 1.65rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.28rem;
+    margin-top: 2.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    margin-top: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    margin: 0.85rem 0;
+  }
+
+  ul, ol {
+    padding-left: 1.4rem;
+  }
+
+  li {
+    margin: 0.35rem 0;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 0.92em;
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: 0.85rem 1rem;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    line-height: 1.35;
+    margin: 1rem 0;
+  }
+
+  pre code {
+    font-size: 0.9rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+  }
+
+  th {
+    background: #f7f7f7;
+  }
+
+  .site-footer {
+    margin: 60px auto 30px;
+    max-width: 650px;
+    padding: 18px 10px 0;
+    font-size: 0.95rem;
+  }
+
+  a.plain-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a.plain-link:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<main><div id="maincontent">
+<h1>Project Focused Summary</h1>
+
+<h2>1. Output and Basic Program Structure</h2>
+<p>A C++ program is made of statements, which are instructions the computer follows step by step. A basic C++ program usually looks like this:</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    // your statements go here
+}
+</code></pre>
+<p><strong>Important parts:</strong></p>
+<ul>
+    <li><code>#include &lt;iostream&gt;</code> &ndash; This lets your program use <code>cout</code> and <code>cin</code>.</li>
+    <li><code>using namespace std;</code> &ndash; This lets you write <code>cout</code> instead of <code>std::cout</code>.</li>
+    <li><code>int main() { }</code> &ndash; This is where the program starts running.</li>
+</ul>
+<p>To print something on the screen, use <code>cout</code>:</p>
+<pre><code>cout &lt;&lt; "Hello world!";
+</code></pre>
+<p>To move to the next line, use <code>endl</code>:</p>
+<pre><code>cout &lt;&lt; "Hello world!" &lt;&lt; endl;
+cout &lt;&lt; "Welcome!" &lt;&lt; endl;
+</code></pre>
+<p>This produces the output:</p>
+<pre><code>Hello world!
+Welcome!
+</code></pre>
+
+<p>Use quotation marks for text:</p>
+<pre><code>cout &lt;&lt; "paycheckAmount";
+</code></pre>
+<p>This prints the word <em>paycheckAmount</em>.</p>
+<p>Do not use quotation marks when printing a variable:</p>
+<pre><code>cout &lt;&lt; paycheckAmount;
+</code></pre>
+<p>This prints the value stored in the variable.</p>
+<p>If you need quotation marks inside a string, use <code>\"</code>:</p>
+<pre><code>cout &lt;&lt; "Bob said, \"Wear a jacket!\"" &lt;&lt; endl;
+</code></pre>
+<p>This prints:</p>
+<pre><code>Bob said, "Wear a jacket!"
+</code></pre>
+<p>For most projects, remember this rule:</p>
+<pre><code>cout &lt;&lt; "Prompt or message" &lt;&lt; endl;
+</code></pre>
+<p>Use one <code>cout</code> statement per line of output when possible. It makes your code easier to read.</p>
+
+<h2>2. Variables, Input, Expressions, and Data Types</h2>
+<p>Variables store values while the program runs.</p>
+<p>Common variable types include:</p>
+<pre><code>int age;          // whole numbers
+double price;     // decimal numbers
+char grade;       // one character
+string name;      // text
+</code></pre>
+<p>If you use <code>string</code>, include this at the top:</p>
+<pre><code>#include &lt;string&gt;
+</code></pre>
+<p>Example:</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main() {
+    string name;
+    cout &lt;&lt; "Enter your name: ";
+    cin &gt;&gt; name;
+    cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; endl;
+}
+</code></pre>
+<p><strong>Input with <code>cin</code></strong></p>
+<p>Use <code>cin</code> to get input from the user:</p>
+<pre><code>cin &gt;&gt; hoursWorked;
+</code></pre>
+<p>Usually, put a prompt before <code>cin</code>:</p>
+<pre><code>cout &lt;&lt; "Enter hours worked: ";
+cin &gt;&gt; hoursWorked;
+</code></pre>
+<p>You can read multiple values in one line:</p>
+<pre><code>cin &gt;&gt; hours &gt;&gt; payRate;
+</code></pre>
+<p>If the user types <code>23 10</code>, then <code>hours</code> gets 23, and <code>payRate</code> gets 10.</p>
+<p><strong>Assignment Statements</strong></p>
+<p>Assignment means “gets”:</p>
+<pre><code>paycheck = hoursWorked * payRate;
+</code></pre>
+<p>Read this as: <em>paycheck gets hoursWorked times payRate</em>. Do not think of <code>=</code> as “equals” like in algebra; in C++, <code>=</code> means assign a value.</p>
+<p><strong>Arithmetic Operators</strong></p>
+<table>
+  <tr><th>Operation</th><th>C++</th></tr>
+  <tr><td>Addition</td><td>+</td></tr>
+  <tr><td>Subtraction</td><td>-</td></tr>
+  <tr><td>Multiplication</td><td>*</td></tr>
+  <tr><td>Division</td><td>/</td></tr>
+  <tr><td>Remainder</td><td>%</td></tr>
+</table>
+<p>Example:</p>
+<pre><code>total = price * quantity;
+</code></pre>
+<p><strong>Precedence</strong></p>
+<p>C++ follows normal math order:</p>
+<ol>
+<li>Parentheses first</li>
+<li><code>*</code>, <code>/</code>, <code>%</code> from left to right</li>
+<li><code>+</code>, <code>-</code> from left to right</li>
+</ol>
+<p>For example:</p>
+<pre><code>result = 12 + 9 / 3;
+</code></pre>
+<p>This gives 15 because division happens before addition.</p>
+<p><strong>Integer Division</strong></p>
+<p>When dividing two integers, C++ discards the decimal part. For example:</p>
+<pre><code>int answer;
+answer = 23 / 4; // answer is 5
+</code></pre>
+<p>To get the remainder:</p>
+<pre><code>remainder = 23 % 4; // remainder is 3
+</code></pre>
+<p><strong>double</strong></p>
+<p>Use <code>double</code> when you need decimals:</p>
+<pre><code>double gallons;
+double quarts;
+quarts = 7;
+gallons = quarts / 4; // gallons is 1.75
+</code></pre>
+<p>Be careful mixing <code>int</code> and <code>double</code>:</p>
+<pre><code>int i = 11;
+int j = 4;
+double x;
+x = i / j; // x is 2.0, not 2.75
+</code></pre>
+<p>To force decimal division:</p>
+<pre><code>x = static_cast&lt;double&gt;(i) / j;
+</code></pre>
+<p><strong>char</strong></p>
+<p>Use <code>char</code> for one character:</p>
+<pre><code>char grade;
+grade = 'A';
+</code></pre>
+<p>Use single quotes for characters and double quotes for strings:</p>
+<pre><code>'A', 'x', '?'  
+"Hello", "CS 10B"
+</code></pre>
+<p><strong>string</strong></p>
+<p>A <code>string</code> stores text:</p>
+<pre><code>string message;
+message = "hello there";
+</code></pre>
+<p>You can combine strings:</p>
+<pre><code>string first = "hello ";
+string second = "there";
+string full = first + second; // full is "hello there"
+</code></pre>
+<p>Useful string functions:</p>
+<ul>
+<li><code>str.length()</code> – Gets the number of characters.</li>
+<li><code>str.substr(3, 7)</code> – Gets 7 characters starting at index 3.</li>
+</ul>
+<p>Remember: string positions start at 0, not 1.</p>
+
+<h2>3. If Statements and Logical Expressions</h2>
+<p>Use <code>if</code> when your program needs to make a decision.</p>
+<p><strong>Basic form:</strong></p>
+<pre><code>if (condition) {
+    statements;
+}
+</code></pre>
+<p>Example:</p>
+<pre><code>if (hours &gt; 30) {
+    paycheck = paycheck + 100;
+}
+</code></pre>
+<p>This means: If <code>hours</code> is greater than 30, add 100 to <code>paycheck</code>.</p>
+<p><strong>If-Else</strong></p>
+<p>Use <code>if-else</code> when exactly one of two choices should happen:</p>
+<pre><code>if (hours &lt;= 40) {
+    paycheck = hours * payRate;
+} else {
+    paycheck = 40 * payRate + (hours - 40) * payRate * 1.5;
+}
+</code></pre>
+<p>If the condition is true, the <code>if</code> part runs. If the condition is false, the <code>else</code> part runs.</p>
+<p><strong>Else-If</strong></p>
+<p>Use <code>else if</code> when there are several possible choices:</p>
+<pre><code>if (score &gt;= 90) {
+    cout &lt;&lt; "A" &lt;&lt; endl;
+} else if (score &gt;= 80) {
+    cout &lt;&lt; "B" &lt;&lt; endl;
+} else if (score &gt;= 70) {
+    cout &lt;&lt; "C" &lt;&lt; endl;
+} else if (score &gt;= 60) {
+    cout &lt;&lt; "D" &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "F" &lt;&lt; endl;
+}
+</code></pre>
+<p>Only one branch runs.</p>
+<p><strong>Relational Operators</strong></p>
+<table>
+  <tr><th>Meaning</th><th>C++</th></tr>
+  <tr><td>Greater than</td><td>&gt;</td></tr>
+  <tr><td>Less than</td><td>&lt;</td></tr>
+  <tr><td>Greater than or equal to</td><td>&gt;=</td></tr>
+  <tr><td>Less than or equal to</td><td>&lt;=</td></tr>
+  <tr><td>Equal to</td><td>==</td></tr>
+  <tr><td>Not equal to</td><td>!=</td></tr>
+</table>
+<p><strong>Important:</strong></p>
+<ul>
+<li><code>=</code> means assignment.</li>
+<li><code>==</code> means comparison.</li>
+</ul>
+<p>Example:</p>
+<pre><code>hours = 30; // Put 30 into hours
+hours == 30 // Is hours equal to 30?
+</code></pre>
+<p><strong>Logical Operators</strong></p>
+<table>
+<tr><th>Meaning</th><th>C++</th></tr>
+<tr><td>And</td><td>&amp;&amp;</td></tr>
+<tr><td>Or</td><td>||</td></tr>
+<tr><td>Not</td><td>!</td></tr>
+</table>
+<p>Example: number is between 5 and 15:</p>
+<pre><code>(number &gt; 5) &amp;&amp; (number &lt; 15)
+</code></pre>
+<p>Example: number is not between 5 and 15:</p>
+<pre><code>(number &lt; 5) || (number &gt; 15)
+</code></pre>
+<p>You need a full condition on both sides of <code>&amp;&amp;</code> or <code>||</code>.</p>
+<p><strong>Logical Precedence</strong></p>
+<p>C++ evaluates logical operators in this order:</p>
+<ol>
+<li>!</li>
+<li>&amp;&amp;</li>
+<li>||</li>
+</ol>
+<p>Use parentheses when you are unsure:</p>
+<pre><code>if ((age >= 18) && (hasID == 'Y')) {
+    cout &lt;&lt; "Allowed" &lt;&lt; endl;
+}
+</code></pre>
+
+<h2>Project Checklist</h2>
+<p>For your project, you will probably need to know how to:</p>
+<ol>
+<li><strong>Write the basic program structure:</strong>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+int main() {
+    
+}
+</code></pre></li>
+<li><strong>Declare variables at the beginning of <code>main()</code>:</strong>
+<pre><code>int hours;
+double payRate;
+string name;
+char choice;
+</code></pre></li>
+<li><strong>Ask the user for input:</strong>
+<pre><code>cout &lt;&lt; "Enter hours: ";
+cin &gt;&gt; hours;
+</code></pre></li>
+<li><strong>Do calculations:</strong>
+<pre><code>paycheck = hours * payRate;
+</code></pre></li>
+<li><strong>Use <code>if</code>, <code>else if</code>, and <code>else</code> to make decisions:</strong>
+<pre><code>if (score >= 90) {
+    grade = 'A';
+} else if (score >= 80) {
+    grade = 'B';
+} else {
+    grade = 'F';
+}
+</code></pre></li>
+<li><strong>Print final results clearly:</strong>
+<pre><code>cout &lt;&lt; "Your paycheck is $" &lt;&lt; paycheck &lt;&lt; endl;
+</code></pre></li>
+<li><strong>Use good style:</strong>
+<ul>
+<li>Use clear variable names.</li>
+<li>Indent inside braces.</li>
+<li>Put comments at the top.</li>
+<li>Use blank lines to separate parts.</li>
+<li>Use named constants when a number has a clear meaning.</li>
+</ul>
+<p>Example of a named constant:</p>
+<pre><code>const int BONUS_AMOUNT = 100;
+</code></pre>
+<p>Instead of writing 100 everywhere, use a constant.</p></li>
+</ol>
+
+<h2>Main Things to Memorize</h2>
+<pre><code>cout &lt;&lt; "text" &lt;&lt; endl;
+cin &gt;&gt; variable;
+int wholeNumber;
+double decimalNumber;
+char oneCharacter;
+string text;
+=   // assignment
+==  // comparison
+&&  // and
+||  // or
+!   // not
+if (condition) {
+    
+} else if (condition) {
+    
+} else {
+    
+}
+</code></pre>
+<p><strong>Biggest warning:</strong></p>
+<pre><code>int x = 23 / 4;
+</code></pre>
+<p>This gives 5, not 5.75, because both numbers are integers.</p>
+</div></main>
+<footer class="site-footer" role="contentinfo">CS 10B · Module 1 · Project Summary</footer>
+</body>
+</html>
