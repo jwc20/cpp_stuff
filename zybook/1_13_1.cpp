@@ -4,7 +4,6 @@
  * Insert the correct number in the code below to print a monthly salary. Then run the program.
  */
 
-
 #include <iostream>
 using namespace std;
 
@@ -20,7 +19,6 @@ int main () {
    cout << "Monthly salary is: ";
    cout << ((hourlyWage * 40 * 50) / 12);
    cout << endl;
-   // FIXME: The above is wrong. Change the 1 so the statement outputs monthly salary.
 
    return 0;
 }
