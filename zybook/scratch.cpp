@@ -1,25 +1,18 @@
+
 #include <iostream>
 using namespace std;
 
 int main() {
    int x;
 
-   cin >> x;
-
-   if (x < 10) {
-      cout << "a";
+   x = 4;
+   if ( !((x > 2) || (x < 5)) ) {
+      cout << "a" << endl;
    }
-   else if (x == 10) {
-      cout << "v";
+   if ( (x > 3) && (x < 9) ) {
+      cout << "b" << endl;
    }
-   else if (x <= 25) {
-      cout << "h";
-   }
-   else {
-      cout << "i";
-   }
-
-   cout << endl;
-
+   cout << "c" << endl;
+   
    return 0;
 }
