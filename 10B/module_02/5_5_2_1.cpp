@@ -1,22 +1,26 @@
+/**
+ * makes a copy of a file.
+**/
+
 #include <fstream>
 #include <iostream>
 using namespace std;
 
 int main() {
-  ifstream infile;
-  char ch;
-
-  infile.open("data.txt");
-
+  ifstream infile("data.txt");
   if (!infile) {
-    cout << "Couldn't open the file." << endl;
+    cout << "Could not open file" << endl;
   } else {
+    ofstream outfile("newfile.txt");
+    char ch;
     infile.get(ch);
     while (infile) {
-      cout << ch;
+      outfile << ch;
       infile.get(ch);
     }
+
     infile.close();
+    outfile.close();
   }
 
   return 0;

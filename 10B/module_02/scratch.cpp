@@ -13,9 +13,10 @@ int main() {
   } else {
     infile.get(ch);
     while (infile) {
-      cout << ch;
+      cout << ch << endl;
       infile.get(ch);
     }
+
     infile.close();
   }
 
